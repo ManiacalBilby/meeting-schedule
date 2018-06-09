@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addPhrase } from '../actions/exampleActions'
+import DayComponent from './DayComponent'
 
 class App extends Component {
   state = {
@@ -30,6 +31,9 @@ class App extends Component {
         {this.props.phrases.map((phrase, i) =>
           <p key={i}>{phrase}</p>
         )}
+        <div>
+          <DayComponent />
+        </div>
       </div>
     )
   }
