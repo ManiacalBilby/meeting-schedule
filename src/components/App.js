@@ -18,19 +18,6 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        React/Redux Boilerplate Up and Running
-        <div>
-          <input
-            type="text"
-            placeholder='write something here'
-            onChange={this.handleChange}
-            value={this.state.formValue}/>
-          <button onClick={this.handleButtonPress}>Add a phrase</button>
-        </div>
-
-        {this.props.phrases.map((phrase, i) =>
-          <p key={i}>{phrase}</p>
-        )}
         <div>
           <DayComponent />
         </div>
@@ -39,9 +26,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    phrases: state.example
-  }
-}
-export default connect(mapStateToProps, { addPhrase })(App)
+export default App

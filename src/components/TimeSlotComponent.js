@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
 const TimeSlotComponent = (props) => {
   return (
-    <div>
     <div className="available-slot">
-      {props.time}
-    </div>
+      <div className="time-range-text">
+        {props.time}
+      </div>
     </div>
   );
 };

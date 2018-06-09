@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-import TimeSlotComponent from './TimeSlotComponent'
-
-const hourList = ["9:00AM - 10:00AM", "10:00AM - 11:00AM", "11:00AM - 12:00PM", "12:00PM - 1:00PM", "1:00PM - 2:00PM", "2:00PM - 3:00PM", "3:00PM - 4:00PM", "4:00PM - 5:00PM" ]
-const appointmentHours = hourList.map((appointmentSlot, index) => {
-return (<TimeSlotComponent key={index} time={appointmentSlot} /> )
-})
+import { connect } from 'react-redux';
+import TimeSlotComponent from './TimeSlotComponent';
 
 class DayComponent extends Component {
 
   render() {
 
     return (
-      <div>{appointmentHours}</div>
+      <div>
+          {this.props.appointments.map((appointmentSlot, index) =>
+          <TimeSlotComponent key={index} time={appointmentSlot.timeRange} />
+        )}
+      </div>
     );
   }
 }
 
-export default DayComponent;
+const mapStateToProps = (state) => {
+  return {
+    appointments: state.appointments
+  }
+}
+
+export default connect(mapStateToProps)(DayComponent);
