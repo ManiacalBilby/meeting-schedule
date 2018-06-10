@@ -1,11 +1,11 @@
-export function ScheduleAppointment (appointment) {
+export function scheduleAppointment (appointment) {
   return {
     type: 'SCHEDULE_APPOINTMENT',
     appointment: {
-      timeRange: timeRange,
-      clientName: clientName,
-      clientPhoneNumber: clientPhoneNumber,
-      isBooked: false
+      timeRange: null,
+      clientName: null,
+      clientPhoneNumber: null,
+      isBooked: true
     }
   }
 }
