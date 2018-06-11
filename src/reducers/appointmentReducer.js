@@ -1,6 +1,4 @@
-import { scheduleAppointment } from '../actions/appointmentActions'
-
-const defaultState = [
+let defaultState = [
   {
     timeRange: "9:00AM - 10:00AM",
     clientName: "",
@@ -51,12 +49,15 @@ const defaultState = [
   } 
 ]
 
-function appointments (state = defaultState, action) {
+const appointments = (state = defaultState, action) => {
   switch (action.type) {
     case 'SCHEDULE_APPOINTMENT':
-    return console.log("banana reducer");
+    console.log("banana reducer");
+    return {...state.map((appointment, timeRange) => appointment.timeRange === timeRange)}
     default:
-      return state
+    console.log("default state returned")
+      return state;
+      
   }
 }
 

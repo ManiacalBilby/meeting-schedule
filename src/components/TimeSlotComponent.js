@@ -29,7 +29,7 @@ handleChange = (event) => {
 handleNewAppointment = (event) => {
   event.preventDefault()
   this.setState({...this.state, isBooked: true, open: false})
-  scheduleAppointment(this.state)
+  this.props.scheduleAppointment(this.state)
 }
 
   render() {
