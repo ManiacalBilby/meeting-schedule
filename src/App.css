@@ -5,8 +5,9 @@
 }
 
 .taken-slot {
-  height: 50px;
+  line-height: 50px;
   background-color: red;
+  margin: 5px;
 }
 
 .time-range-text {

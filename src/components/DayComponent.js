@@ -4,14 +4,10 @@ import TimeSlotComponent from './TimeSlotComponent';
 
 class DayComponent extends Component {
 
-  clickedSlot = () => {
-    console.log("clicked")
-  }
-
   render() {
 
     return (
-      <div onClick={this.clickedSlot}>
+      <div>
           {this.props.appointments.map((appointmentSlot, index) =>
           <TimeSlotComponent key={index} appointment={appointmentSlot} />
         )}
