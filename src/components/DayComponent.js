@@ -4,7 +4,7 @@ import TimeSlotComponent from './TimeSlotComponent';
 
 const DayComponent = (props) => {
   return (
-    <div>
+    <div className="daily-schedule">
       {props.appointments.appointmentSlots.map((appointmentSlot, index) =>
       <TimeSlotComponent key={index} appointment={appointmentSlot} />
       )}

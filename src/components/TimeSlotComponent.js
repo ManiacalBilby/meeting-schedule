@@ -11,7 +11,7 @@ state = {
   clientPhoneNumber: this.props.appointment.clientPhoneNumber,
   isBooked: false,
   open: false,
-  colorClassName: "available-slot",
+  colorClassName: "basic-slot",
 };
 
 onOpenModal = () => {
@@ -28,7 +28,7 @@ handleChange = (event) => {
 
 handleNewAppointment = async (event) => {
   event.preventDefault()
-  await this.setState({...this.state, isBooked: true, open: false, colorClassName: "taken-slot"})
+  await this.setState({...this.state, isBooked: true, open: false, colorClassName: "basic-slot taken-slot"})
   await this.props.scheduleAppointment(this.state)
   console.log("TimeSlotComponent local State",this.state)
 };
@@ -37,16 +37,23 @@ handleNewAppointment = async (event) => {
   const { open } = this.state;
   return (
     <div onClick={this.onOpenModal} className={this.state.colorClassName}>
-      <div className="time-range-text">
+      <div>
         {this.props.appointment.timeRange}
       </div>
       <Modal open={open} onClose={this.onCloseModal} showCloseIcon={false} center>
-        <form onSubmit={this.handleNewAppointment}>
-          <label htmlFor="clientName">Name:</label>
-          <input onChange={this.handleChange} name="clientName" type="text" value={this.state.clientName}/>
-          <label htmlFor="clientPhoneNumber">PhoneNumber:</label>
-          <input onChange={this.handleChange} name="clientPhoneNumber"type="text" value={this.state.clientPhoneNumber}/>
-          <button>Submit</button>
+        <form className = "form-wrapper" onSubmit={this.handleNewAppointment}>
+            <div className = "form-field">
+            <label htmlFor="clientName">Name:</label>
+            <input className="input" onChange={this.handleChange} name="clientName" type="text" value={this.state.clientName}/>
+          </div>
+          <div className="form-field">
+            <label htmlFor="clientPhoneNumber">PhoneNumber:</label>
+            <input className="input" onChange={this.handleChange} name="clientPhoneNumber"type="text" value={this.state.clientPhoneNumber}/>
+          </div>
+          <div className="button-container">
+            <button className="button">Submit</button>
+          </div>
+          
         </form>
       </Modal>
     </div>

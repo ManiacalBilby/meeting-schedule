@@ -1,15 +1,61 @@
-.available-slot {
+.wrapper {
+  height: 100vh;
+  display: flex;
+  background-color: ghostwhite;
+  justify-content: center;
+  align-items: center;
+}
+
+.daily-schedule {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+.basic-slot {
   background-color: lightgray;
   line-height: 50px;
+  text-align: center;
   margin: 5px;
+  font-size: 1.5rem;
+}
+
+.basic-slot :hover {
+  box-shadow: 3px 2px 2px 2px rgba(112,105,112,0.55);
+  cursor: pointer;
 }
 
 .taken-slot {
-  line-height: 50px;
-  background-color: red;
-  margin: 5px;
+  background-color: rgb(212, 0, 0);
 }
 
-.time-range-text {
-  margin-left: 3px;
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 10px ;
+}
+
+.input {
+  height: 20px;
+  width: 300px;
+  padding-left: 5px;
+  margin-top: 3px;
+  font-size: 1.25rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30px;
+}
+.button {
+  width: 300px;
+  height: 100%;
+  font-size: 1.1rem;
 }

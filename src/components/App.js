@@ -3,7 +3,7 @@ import DayComponent from './DayComponent'
 
 const App = () => {
     return (
-        <div>
+        <div className="wrapper">
           <DayComponent />
         </div>
     )
