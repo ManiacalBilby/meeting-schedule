@@ -1,4 +1,4 @@
-let defaultState = [
+let defaultState = {appointmentSlots: [
   {
     timeRange: "9:00AM - 10:00AM",
     clientName: "",
@@ -47,13 +47,16 @@ let defaultState = [
     clientPhoneNumber: "",
     isBooked: false
   } 
-]
+]}
 
 const appointments = (state = defaultState, action) => {
   switch (action.type) {
     case 'SCHEDULE_APPOINTMENT':
-    console.log("banana reducer");
-    return {...state.map((appointment, timeRange) => appointment.timeRange === timeRange)}
+    console.log("timeRange",action.payload.timeRange);
+      return{
+        ...state,
+        appointmentSlots: state.appointmentSlots.map(appointment => (appointment.timeRange === action.payload.timeRange) ? action.payload : appointment)
+      }
     default:
     console.log("default state returned")
       return state;

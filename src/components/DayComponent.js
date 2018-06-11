@@ -8,7 +8,7 @@ class DayComponent extends Component {
 
     return (
       <div>
-          {this.props.appointments.map((appointmentSlot, index) =>
+          {this.props.appointments.appointmentSlots.map((appointmentSlot, index) =>
           <TimeSlotComponent key={index} appointment={appointmentSlot} />
         )}
       </div>

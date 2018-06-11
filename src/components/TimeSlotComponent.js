@@ -6,6 +6,7 @@ import Modal from 'react-responsive-modal'
 class TimeSlotComponent extends Component {
 
 state = { 
+  timeRange: this.props.appointment.timeRange,
   clientName: this.props.appointment.clientName,
   clientPhoneNumber: this.props.appointment.clientPhoneNumber,
   isBooked: false,
@@ -26,10 +27,11 @@ handleChange = (event) => {
   })
 }
 
-handleNewAppointment = (event) => {
+handleNewAppointment = async (event) => {
   event.preventDefault()
-  this.setState({...this.state, isBooked: true, open: false})
-  this.props.scheduleAppointment(this.state)
+  await this.setState({...this.state, isBooked: true, open: false})
+  await this.props.scheduleAppointment(this.state)
+  console.log("TimeSlotComponent local State",this.state)
 }
 
   render() {
