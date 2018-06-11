@@ -1,6 +1,6 @@
 export function scheduleAppointment (appointment) {
 
-  console.log(appointment.isBooked)
+  console.log(appointment.isBooked);
   return {    
     type: 'SCHEDULE_APPOINTMENT',
     payload: {
@@ -10,4 +10,4 @@ export function scheduleAppointment (appointment) {
       isBooked: appointment.isBooked,
     }
   }
-}
+};
