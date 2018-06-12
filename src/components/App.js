@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import DayComponent from './DayComponent'
 
 const App = () => {

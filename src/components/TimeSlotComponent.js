@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { scheduleAppointment } from '../actions/appointmentActions';
 import { connect } from 'react-redux';
 import Modal from 'react-responsive-modal';
+import { scheduleAppointment } from '../actions/appointmentActions';
 
 class TimeSlotComponent extends Component {
 
@@ -30,7 +30,6 @@ handleNewAppointment = async (event) => {
   event.preventDefault()
   await this.setState({...this.state, isBooked: true, open: false, colorClassName: "basic-slot taken-slot"})
   await this.props.scheduleAppointment(this.state)
-  console.log("TimeSlotComponent local State",this.state)
 };
 
   render() {
@@ -53,7 +52,6 @@ handleNewAppointment = async (event) => {
           <div className="button-container">
             <button className="button">Submit</button>
           </div>
-          
         </form>
       </Modal>
     </div>

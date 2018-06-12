@@ -1,6 +1,4 @@
 export function scheduleAppointment (appointment) {
-
-  console.log(appointment.isBooked);
   return {    
     type: 'SCHEDULE_APPOINTMENT',
     payload: {
