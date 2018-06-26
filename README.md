@@ -3,7 +3,7 @@ This is an hourly schedule application built using react and redux.
 
 ## Deployed on Heroku
 
-Try it out [here](https://time-slots.herokuapp.com/)
+Try it out [here](https://time-slots.herokuapp.com/).
 
 ## Running the app
 
