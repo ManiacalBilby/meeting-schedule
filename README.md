@@ -1,6 +1,10 @@
 ## Hourly Schedule
 This is an hourly schedule application built using react and redux.
 
+## Deployed on Heroku
+
+Try it out [here](https://time-slots.herokuapp.com/)
+
 ## Running the app
 
 [Clone](https://help.github.com/articles/cloning-a-repository/) or [fork](https://help.github.com/articles/fork-a-repo/) the repo.
