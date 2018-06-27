@@ -41,7 +41,7 @@ handleNewAppointment = async (event) => {
       </div>
       <Modal open={open} onClose={this.onCloseModal} showCloseIcon={false} center>
         <form className = "form-wrapper" onSubmit={this.handleNewAppointment}>
-            <div className = "form-field">
+          <div className = "form-field">
             <label htmlFor="clientName">Name:</label>
             <input className="input" onChange={this.handleChange} name="clientName" type="text" value={this.state.clientName}/>
           </div>

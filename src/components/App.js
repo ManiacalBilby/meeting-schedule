@@ -3,9 +3,9 @@ import DayComponent from './DayComponent'
 
 const App = () => {
     return (
-        <div className="wrapper">
-          <DayComponent />
-        </div>
+      <div className="wrapper">
+        <DayComponent />
+      </div>
     )
   }
 
